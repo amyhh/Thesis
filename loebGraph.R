@@ -1,6 +1,11 @@
 #primary intention to treat analysis 
 #rt-pcr confirmed covid-19
 
+#with forestplot package - have questions about why the black bars are so big
+## install.packages("forestplot")
+library("forestplot")
+library(dplyr)
+
 #Hazard ratios 
 
 country.name <- c("Canada", "Israel", "Pakistan", "Egypt", "All sites")
@@ -10,27 +15,26 @@ upper.CI <- c(10.72, 5.49, 8.98, 1.50, 1.69)
 data <- data.frame(country.name, HR, lower.CI, upper.CI)
 print(data)
 
-
-#with forestplot package - have questions about why the black bars are so big
-install.packages("forestplot")
-library("forestplot")
-library(dplyr)
 forestplot(labeltext = "Canada", mean = 2.83, lower = 0.75, upper = 10.72)
 
 forestplot(labeltext = data$country.name, mean = c(1,1,1,1,1), lower = data$lower.CI, upper = data$upper.CI)
 data$country.name <- as.factor(data$country.name)
 
 
+######################################################################
+
+## Think about what you would need to pass to make this a separate script
+
 #using ggplot2
 library(tidyverse)
 library(gt)
 library(ggplot2)
-help(fct_rev)
+## help(fct_rev)
 p <- 
   data |>
   ggplot(aes(y = fct_rev(country.name))) + 
   theme_classic()
-p
+print(p)
 
 
 p <- p + geom_point(aes(x=data$HR), shape=15, size=3) +
