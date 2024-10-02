@@ -8,7 +8,7 @@
 #library(gt)
 #library(ggplot2)
 
-#Hazard ratios 
+#Hazard ratios setup
 
 country.name <- c("Canada", "Israel", "Pakistan", "Egypt", "All sites")
 HR <- c(2.83, 1.54, 1.50, 0.95, 1.14)
