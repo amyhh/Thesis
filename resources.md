@@ -4,4 +4,4 @@ crohns paper -> https://www.sciencedirect.com/science/article/pii/S1542356523000
 
 Dushoff crohn's CI code -> https://github.com/dushoff/ResearchSandbox/blob/main/digestive.R
 
-
+Gelman Stats Blog -> https://statmodeling.stat.columbia.edu/
