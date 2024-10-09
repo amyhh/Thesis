@@ -21,9 +21,6 @@ autopipeR = defined
 
 loebGraph.Rout: loebGraph.R
 
-## JD is unhappy about divergent progress
-struggling.Rout: struggling.R
-
 ######################################################################
 
 ### Makestuff
