@@ -19,7 +19,7 @@ upper.CI <- c(10.72, 5.49, 8.98, 1.50, 1.69)
 sample.size <- c(266, 34, 186, 518, 1004)
 data <- data.frame(country.name, HR, lower.CI, upper.CI, sample.size)
 print(data)
-view(data) #this lets me view as a table in another tab
+## view(data) #this lets me view as a table in another tab
 
 ######################################################################
 
@@ -28,11 +28,12 @@ view(data) #this lets me view as a table in another tab
 base <- (
   ggplot(data)
   + aes(y = fct_rev(country.name))) + 
-  geom_point(aes(x=data$HR), shape=15, size = scale(sample.size)) +
-  geom_linerange(aes(xmin=data$lower.CI, xmax=data$upper.CI)) +
+  geom_point(aes(x=HR, size = sample.size), shape=15) +
+  scale_size_area() +
+  geom_linerange(aes(xmin=lower.CI, xmax=upper.CI)) +
   geom_vline(xintercept = 2, linetype="dashed") +
   geom_vline(xintercept = 1, linetype="dotted") +
-  #this doesn't work axisTicks(c(min(data$lower.CI), max(data$upper.CI)), log = FALSE, axp = NULL, nint = 10) +
+  #this doesn't work axisTicks(c(min(lower.CI), max(upper.CI)), log = FALSE, axp = NULL, nint = 10) +
   labs(title = "Hazard Ratio of Covid-19 Infection for Surgical Masks vs.Respirator", x="Hazard Ratio (95% CI)", y="Country") +
   annotate("text", x = 1, y = 0.5, label = "HR = 1") +
   theme(panel.background = element_rect(fill = "white"), axis.line.x.bottom=element_line(color="black"), axis.line.y.left=element_line(color="black") )
