@@ -9,6 +9,8 @@ library(tidyverse)
 library(gt)
 library(ggplot2); theme_set(theme_classic(base_size=12))
 
+logbreaks <- c(0.5, 1, 2, 4, 8)
+
 # Data
 country.name <- c("Canada", "Israel", "Pakistan", "Egypt", "All sites")
 HR <- c(2.83, 1.54, 1.50, 0.95, 1.14)
@@ -36,9 +38,10 @@ pointplot <- base +  geom_point(aes(x=HR), shape=15, size=3)
 ## A lot like Loeb (although Loeb manages to be worse)
 print(pointplot)
 
+## It would be nice to add a tick for "4" on our final plot, (probably by using "breaks="?).
 print(pointplot + scale_x_continuous(trans="log2"))
 
-logplot <- base + scale_x_continuous(trans="log2")
+logplot <- base + scale_x_continuous(trans="log2", breaks=logbreaks)
 
 print(logplot+ geom_point(aes(x=HR, size = sample.size)) + scale_size_area())
 
