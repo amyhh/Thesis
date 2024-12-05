@@ -23,6 +23,12 @@ loebGraph.Rout: loebGraph.R
 
 ######################################################################
 
+Sources += *.searchtext
+
+## example.searchtext
+
+######################################################################
+
 ### Makestuff
 
 Sources += Makefile
