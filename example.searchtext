@@ -1,4 +1,4 @@
-## is the comment going to mess us up?
+## Comment needs to be handled by script (pubmed chokes on it)
 ## This can be cleaned up more; in theory it would be good to be able to see the logic from the indentation pattern, as in the top set of parents
 ("1991/01/01"[Date - Publication] : "3000"[Date - Publication])
 AND (
