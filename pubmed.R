@@ -5,7 +5,7 @@
   #the following code will only run on the later (>3.0) versions
 library(easyPubMed)
 
-my_query <- readLines("C:/Users/amyhu/OneDrive - McMaster University/Desktop/Thesis/((statistics as topic[MeSH Terms]).txt")
+my_query <- readLines("bioTerms.txt")
 my_query <- paste(my_query, collapse = "\t") 
 my_query <- stringr::str_squish(my_query) #these two lines turn human-readable txt format into something to input into easyPubMed
 my_query
