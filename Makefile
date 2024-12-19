@@ -20,6 +20,8 @@ Sources += $(wildcard *.md)
 
 ######################################################################
 
+Ignore += $(wildcard *.combined.txt *_batch*.txt)
+
 search.Rout: search.R
 
 ## MedicalStatisticsTermsImprovedMesh.combined.txt: search.R
