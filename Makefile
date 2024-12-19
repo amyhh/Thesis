@@ -20,6 +20,14 @@ Sources += $(wildcard *.md)
 
 ######################################################################
 
+search.Rout: search.R
+
+## MedicalStatisticsTermsImprovedMesh.combined.txt: search.R
+%.combined.txt: %_batch_01.txt
+	cat $*_batch* > $@
+
+######################################################################
+
 Sources += $(wildcard *.R)
 
 autopipeR = defined
