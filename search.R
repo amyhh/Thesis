@@ -1,9 +1,10 @@
 #using easyPubMed in R
+library(shellpipes)
 
 library(easyPubMed)
 library(stringr)
 
-my_query <- readLines("MedicalStatisticsTermsImprovedMesh.txt")
+my_query <- readLines(matchFile(ext="txt"))
 
 ## Do we need this for easyPubMed
 my_query <- str_flatten(my_query)

@@ -22,9 +22,13 @@ Sources += $(wildcard *.md)
 
 Ignore += $(wildcard *.combined.txt *_batch*.txt)
 
-search.Rout: search.R
+%.search.Rout: search.R %.txt
+	$(pipeR)
 
-## MedicalStatisticsTermsImprovedMesh.combined.txt: search.R
+## MedicalStatisticsTermsImprovedMesh_batch_01.txt: search.R
+%_batch_01.txt: %.search.Rout ;
+
+## test.combined.txt: search.R test.txt
 %.combined.txt: %_batch_01.txt
 	cat $*_batch* > $@
 
