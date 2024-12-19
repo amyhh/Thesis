@@ -7,7 +7,7 @@ library(easyPubMed)
 library(tidyverse)
 
 my_query <- readLines("bioTerms.txt")
-my_query <- str_flatten(query)
+my_query <- str_flatten(my_query)
 my_query <- stringr::str_squish(my_query) #these two lines turn human-readable txt format into something to input into easyPubMed
 my_query
 
