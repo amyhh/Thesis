@@ -28,8 +28,9 @@ Ignore += $(wildcard *.combined.txt *_batch*.txt)
 ## MedicalStatisticsTermsImprovedMesh_batch_01.txt: search.R
 %_batch_01.txt: %.search.Rout ;
 
-Sources += test.txt
-## test.combined.txt: search.R test.txt
+Sources += test.txt simple.txt
+## simple.combined.txt: search.R simple.txt
+## simple.search.Rout: search.R simple.txt
 %.combined.txt: %_batch_01.txt
 	cat $*_batch* > $@
 

@@ -2,14 +2,9 @@
 library(shellpipes)
 
 library(easyPubMed)
-library(stringr)
+library(readr)
 
-my_query <- readLines(matchFile(ext="txt"))
-
-## Do we need this for easyPubMed
-my_query <- str_flatten(my_query)
-my_query <- str_squish(my_query)
+my_query <- read_file(matchFile(ext="txt"))
 
 epm <- epm_query(my_query)
-epm <- epm_fetch(epm, format = 'medline', write_to_file = TRUE, outfile_prefix = "MedicalStatisticsTermsImprovedMesh", store_contents = TRUE)
-  #this is now a nice medline file that is human readable 
+epm <- epm_fetch(epm, format = 'medline', write_to_file = TRUE, outfile_prefix = pipeStar(), store_contents = TRUE)
