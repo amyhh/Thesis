@@ -14,6 +14,7 @@ vim_session:
 Sources += $(wildcard.R)
 Ignore += testPub*
 
+bioTerms_batch_01.txt: pubmed.Rout ;
 pubmed.Rout: pubmed.R
 
 Sources += $(wildcard *.md)

@@ -6,11 +6,15 @@
 library(easyPubMed)
 library(tidyverse)
 
-my_query <- readLines("bioTerms.txt")
+stem = "bioTerms"
+
+my_query <- readLines(paste0(stem, ".txt"))
 my_query <- str_flatten(my_query)
 my_query <- stringr::str_squish(my_query) #these two lines turn human-readable txt format into something to input into easyPubMed
 my_query
 
 epm <- epm_query(my_query)
-epm <- epm_fetch(epm, format = 'medline', write_to_file = TRUE, outfile_prefix = "testPubMedDec11", store_contents = TRUE)
-  #this is now a nice medline file that is human readable 
+epm <- epm_fetch(epm
+	, format = 'medline' , write_to_file = TRUE
+	, outfile_prefix = stem, store_contents = TRUE
+)
