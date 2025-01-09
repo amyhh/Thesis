@@ -24,7 +24,7 @@ Sources += $(wildcard *.md)
 Ignore += $(wildcard *.combined.txt *_batch*.txt)
 
 .PRECIOUS: %.search.Rout
-%.search.Rout: search.R %.txt
+%.search.Rout: search.R %.search
 	$(pipeR)
 
 ## MedicalStatisticsTermsImprovedMesh_batch_01.txt: search.R
