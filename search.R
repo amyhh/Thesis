@@ -7,7 +7,7 @@ rpcall("simple.search.Rout simple.pipestar search.R simple.txt")
 library(easyPubMed)
 library(readr)
 
-my_query <- read_file(matchFile(ext="txt"))
+my_query <- read_file(matchFile(ext="search"))
 
 epm <- epm_query(my_query)
 epm <- epm_fetch(epm, format = 'medline', write_to_file = TRUE, outfile_prefix = pipeStar(), store_contents = TRUE)
