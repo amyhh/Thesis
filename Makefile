@@ -15,7 +15,7 @@ Sources += $(wildcard.R)
 Ignore += testPub*
 
 bioTerms_batch_01.txt: pubmed.Rout ;
-pubmed.Rout: pubmed.R
+pubmed.Rout: pubmed.R bioTerms.txt
 
 Sources += $(wildcard *.md)
 
@@ -23,6 +23,7 @@ Sources += $(wildcard *.md)
 
 Ignore += $(wildcard *.combined.txt *_batch*.txt)
 
+.PRECIOUS: %.search.Rout
 %.search.Rout: search.R %.txt
 	$(pipeR)
 
@@ -34,6 +35,10 @@ Sources += test.txt simple.txt
 ## simple.search.Rout: search.R simple.txt
 %.combined.txt: %_batch_01.txt
 	cat $*_batch* > $@
+
+## test.combined.txt: test.txt
+## current.combined.txt: current.txt
+## title.combined.txt: title.txt
 
 ######################################################################
 
