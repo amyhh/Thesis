@@ -1,4 +1,5 @@
 (
+<<<<<<< AmysChanges
 	("Analysis of Variance"[MeSH Terms]) 
 	OR ("Biometry"[MeSH Terms])
 	OR ("Biostatistics"[MeSH Terms])
@@ -23,13 +24,40 @@ AND (
 	OR (research-on-research[Title/Abstract])
 	OR ("Review literature as topic"[MeSH Terms])
 	OR (review*[Title/Abstract])
+=======
+"statistics as topic"[MeSH Major Topic]
+  OR (power[Title])
+	OR ("effect size*"[Title])
+	OR ("confidence interval*"[Title])
+	OR (statistic*[Title])
+	OR ("data analysis"[MeSH Major Topic])
+	OR ("data science"[MeSH Major Topic])
+	OR (hypothesis test*[title/abstract])
+	)
+AND (
+	("biomedical research"[MeSH Terms])
+	OR ("medicine"[MeSH Terms])
+	OR (biomed*[Title/Abstract])
+	OR (medical[Title/Abstract])
+	OR (medicine[Title/Abstract])
+	OR (surg*[title/abstract])
+	) 
+AND (
+	(Critical appraisal[Title/Abstract]) 
+	OR (empirical assessment*[Title/Abstract)
+	OR (meta-research*[Title/Abstract])
+	OR ("Review literature as topic"[MeSH Terms])
+	OR (review*[Title/Abstract])
+	OR ("meta-analysis"[MeSH Terms])
+	OR ("meta-analysis as topic"[MeSH Terms])
+>>>>>>> main
 	)
 
 AND (
-	2020:2024[pdat]
+	2015:2020[pdat]
 	) 
 AND (English[Language]) 
 NOT (Editorial[Publication Type])
 NOT (bioinform*[Title/Abstract])
-
-
+NOT ("Risk"[Mesh Terms])
+NOT ("protocol"[Title])
