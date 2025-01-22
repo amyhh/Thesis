@@ -29,9 +29,9 @@ Ignore += $(wildcard *.combined.txt *_batch*.txt)
 %.search.Rout: search.R %.search
 	$(pipeR)
 
-## MedicalStatisticsTermsImprovedMesh_batch_01.txt: search.R
 %_batch_01.txt: %.search.Rout ;
 
+## MedicalStatisticsTermsImprovedMesh.combined.txt: search.R
 ## simple.combined.txt: search.R simple.search
 ## simple.search.Rout: search.R simple.search
 %.combined.txt: %_batch_01.txt
